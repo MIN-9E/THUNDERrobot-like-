@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心_修改资料_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/personal.css">
+    <link rel="icon" href="<?= HL ?>image/favicon.ico">
+</head>
+<body>  
+
+  <?php $this->top() ?>
+
+
+  <div class="nav">
+    <div class="nav_bg">
+      <div class="nav_container">
+        <a href="">首页</a><span>></span><a href="">用户中心</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="order">
+    <div class="order_container clearFix">
+      <div class="order_leftBox">
+        <dt>订单中心</dt>
+        <dd><a href="index.php?c=orders">我的订单</a></dd>
+        <dd><a href="">退换货订单</a></dd>
+        <dd><a href="index.php?c=user&a=address">收货地址</a></dd>
+        <dd><a href="">缺货登记</a></dd>
+        <dd><a href="">以旧换新</a></dd>
+        <dt>会员中心</dt>
+        <dd><a href="index.php?c=user">我的个人中心</a></dd>
+        <dd><a href="">推荐有礼</a></dd>
+        <dd><a href="index.php?c=user&a=personal" style="color:#00eef3">用户信息</a></dd>
+        <dd><a href="">我的收藏</a></dd>
+        <dd><a href="">我的留言</a></dd>
+        <dd><a href="">我的评论</a></dd>
+        <dd><a href="">我的提问</a></dd>
+        <dd><a href="">我的众筹</a></dd>
+        <dd><a href="">企业用户</a></dd>
+        <dt>雷域商城</dt>
+        <dd><a href="">我的雷魂</a></dd>
+        <dd><a href="">我的晒单</a></dd>
+        <dd><a href="">与我相关</a></dd>
+        <dd><a href="">0元抽奖</a></dd>
+        <dt>账户中心</dt>
+        <dd><a href="">我的优惠券</a></dd>
+        <dd><a href="">跟踪包裹</a></dd>
+      </div>
+      <div class="personalPage">
+        <div class="personal_tittle">
+          个人资料
+        </div>
+
+        <?php if (empty($data['icon'])): ?>
+          
+
+        <div class="personal_icon clearFix">
+          <div class="presonal_pic">
+            <div class="personal_piccontain">
+              <img src="<?= HL ?>image/photo.jpg" >
+            </div>
+          </div>
+
+          <a href="index.php?c=user&a=edit"><button>修改</button></a>
+        </div>
+
+        <?php else: ?>
+
+        <div class="personal_icon clearFix">
+          <div class="presonal_pic">
+            <div class="personal_piccontain">
+              <img src="<?= imgUrl($data['icon']) ?>" >
+            </div>
+          </div>
+
+          <a href="index.php?c=user&a=edit"><button>修改</button></a>
+        </div>  
+
+        <?php endif ?>
+
+        <div class="personal_data clearFix">
+          <div class="personal_iconLogo">
+            <img src="<?= HL ?>image/user_01.png" style="transform:translateX(-120px)">  
+          </div>
+
+          <div class="personal_list ">
+            <p>基础资料</p>
+            <span>用于编辑基础资料编辑个人信息</span>
+          </div>
+          <div class="personal_detaiinf">
+            <li>昵称:<span><?= $data['nickname'] ?></span></li>
+            <li>生日:<span><?= $data['birthday'] ?></span></li>
+            <li>性别:<span><?= $data['sex']==1?'男':'女' ?></span></li>
+          </div>
+          <a href="index.php?c=user&a=edit"><button>修改</button></a>
+        </div>
+        <div class="personal_data clearFix">
+          <div class="personal_iconLogo">
+            <img src="<?= HL ?>image/user_01.png" style="transform:translateX(-40px)">  
+          </div>
+          <div class="personal_list ">
+            <p>个人住址</p>
+            <span>用于接收礼物的紧急联系地址</span>
+          </div>
+          <div class="personal_detaiinf">
+            <li>地址:<span><?= $data['address'] ?></span></li>
+          </div>
+          <a href="index.php?c=user&a=edit"><button>修改</button></a>
+        </div>
+        <div class="personal_data clearFix">
+          <div class="personal_iconLogo">
+            <img src="<?= HL ?>image/user_01.png" style="transform:translateX(-80px)">  
+          </div>
+          <div class="personal_list ">
+            <p>绑定手机号</p>
+            <span>绑定手机号可以用于登录雷神账号，重置密码或其他安全验证</span>
+          </div>
+          <div class="personal_detaiinf">
+            <li>手机号:<span><?= $data['tel'] ?></span></li>
+          </div>
+
+          <a href="index.php?c=user&a=edit"><button>修改</button></a>
+        </div>
+        <div class="personal_data clearFix">
+          <div class="personal_list ">
+            <div class="personal_iconLogo">
+            <img src="<?= HL ?>image/user_01.png" style="transform:translateX(-160px)">  
+          </div>
+            <p>绑定帐号</p>
+            <span>绑定第三方账号可以用于登录雷神账号</span>
+          </div>
+        </div>
+        <div class="personal_linkto clearFix ">
+          <div class="personal_linkbox1 iconfont clearFix">
+            <div class="personal_picbox">
+            </div>
+            <div class="personal_detail">
+              <p>QQ</p>
+            <div class="personal_state"><span>&#xe60a; </span> <span>未绑定</span></div>
+            <button>添加绑定</button>
+            </div>
+          </div>
+          <div class="personal_linkbox1 iconfont clearFix">
+            <div class="personal_picbox2">
+            </div>
+            <div class="personal_detail">
+              <p>微信</p>
+            <div class="personal_state greenLogo"><span>&#xe60b; </span> <span>已绑定</span></div>
+            <button>取消绑定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <?php $this->footer() ?>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

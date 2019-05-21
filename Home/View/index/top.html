@@ -1,0 +1,159 @@
+
+
+    <div class="header1" id="head">
+    	<div class="head_container1">
+    		<div class="head_container_left1">
+    			<ul class="head_text1 clearFix">
+    				<li><a href="">雷神官网</a></li>
+    				<li><span>|</span><a href="">雷神校园</a></li>
+    				<li><span>|</span><a href="">雷神国际站</a></li>
+    				<li><span>|</span><a href="">神游电竞</a></li>
+    				<li><span>|</span><a href="">雨田基金</a></li>
+    				<li><span>|</span><a href="">旧机换新</a></li>
+    				<li><span>|</span><a href="">银行分期购</a></li>
+    				<li class="head_pic_con1"><span>|</span><a href="">商城移动版</a>
+    					<div class="head_pic1">
+    						<img src="<?= HL ?>image/yidong.png" >
+    					</div>
+    				</li>
+    				<li class="head_pic_con1"><span>|</span><a href="">雷神租赁</a>
+    					<div class="head_pic1">
+    						<img src="<?= HL ?>image/zl.jpg" >
+    					</div>
+    				</li>
+    			</ul>
+   	
+    		</div><!-- head行左幅 -->
+            <div class="head_container_right1 ">
+                <div class="shopCart1 iconfont">
+                    <a href="index.php?c=cart"> &#xe622; 购物车(<?= empty($_SESSION['cart'])?0:count($_SESSION['cart']); ?>)</a>
+                    <?php if (empty($_SESSION['cart'])): ?>
+                        
+                        <div class="shop_box1">
+                            购物车中还没有商品，赶紧选购吧！
+                        </div>  <!-- head行右幅 -->
+     
+
+                    <?php else: ?>
+
+                        <div class="shop_box1">
+                            <div class="top_001" style="height: 50px;">
+                                <div class="012" style="float:left;line-height:50px;padding-left:30px;"><?= $result['name'] ?> </div>
+                                <div class="012" style="float:right;line-height:50px;padding-right:30px;">&yen;<?= $result['price'] ?> X <?= $result['count'] ?></div>
+                              </div>
+                              <div class="top_002" style="height: 50px; ;">
+                                <div class="top_021" style="width: 150px;height: 50px;float: left;">
+                                  <div class="top022" style="padding-left:30px;height:10px;line-height:10px;color:#00eef3;text-align:left">共计<?=count($_SESSION['cart'])?>件商品</div>
+                                  <div class="top022" style="padding-left:30px;color:#00eef3;height:40px;line-height:40px;font-size:22px;text-align:left;">
+                                    <span style="font-size:14px;color:#00eef3;">合计:</span>
+                                    <?=$result['count']*$result['price']?>
+                                  </div>
+                                </div>
+                                <div class="top_022" style="width: 150px;height: 50px;float: right;">
+                                  <a href="index.php?c=cart" style="color:white"><div class="top_023" style="width: 130px;height: 40px;border: 1px solid #e0e0e0;background: #00bcbf;line-height:40px;">去购物车结算</div></a>
+                                </div>
+                              </div>   
+                        </div>  
+
+                    <?php endif ?>
+                        
+                </div>  
+                
+    <?php if (empty($_SESSION['nickname'])): ?>
+
+                <div class="login1">
+                    <ul>
+                        <li><a href="">签到赢好礼</a></li>
+                        <li><span>|</span><a href="index.php?c=login">登录</a></li>
+                        <li><span>|</span><a href="index.php?c=login&a=regist">注册</a></li>
+                    </ul>
+                </div>
+
+    <?php else: ?>
+        
+        <div class="top_rightcon1 position1 iconfont">
+          <a href="index.php?c=user&a=personal"><?= $_SESSION['nickname'] ?> &nbsp;&#xe615;</a>
+          <div class="top_rightList1 ">
+            <div class="top_listcon1"><a href="index.php?c=user">个人中心</a></div>
+            <div class="top_listcon1"><a href="">我的收藏</a></div>
+            <div class="top_listcon1"><a href="">我的评论</a></div>
+            <div class="top_listcon1"><a href="">跟踪包裹</a></div>
+            <div class="top_listcon1"><a href="index.php?c=login&a=logOut">退出登录</a></div>
+          </div>
+        </div>
+
+    <?php endif ?>
+
+
+
+    		</div>
+    	</div>
+    </div><!-- head头结束，第一行 -->
+   
+	
+	<!-- 第二行开始 -->
+    <div class="nav1">
+    	<div class="nav_top1">
+    		<a href="index.php">
+    			<div class="nav_logo1">
+    			<img src="<?= HL ?>image/logo_new.jpg" alt="">
+    			</div>
+    		</a>
+    		<a href="">
+    			<div class="nav_exp1">
+    			<img src="<?= HL ?>image/1550167041967117957.gif" alt="">
+    			</div>
+    		</a>
+			<!-- 第二行分为上下两行，第一行左侧图片结束 -->
+    		<div class="nav_search1 ">
+    			<div class="searchBox1">
+    				<form action="demo.php" method="get" >
+    				<input type="text" name="search" class="search_input1" placeholder="                                                        911Air   Dino   黑幽灵">
+    				</form>
+    			</div>
+    			<button class="button_search1">
+    				<span class="magni1 iconfont">&#xe620;</span>
+    			</button>
+    		</div>
+    	</div>
+		<!-- 第二行右侧搜索栏结束 -->
+
+		<!-- 第二行nav下的bottom底部开始 -->
+    	<div class="nav_bot1">
+    		<div class="nav_list_tab1 clearFix ">
+    			<div class="nav_tab11">全部分类</div>
+    			<div class="nav_tab21"><img src="<?= HL ?>image/fen.png"></div>
+    		</div>
+   		 	<!-- 第二行下的右侧标签开始 -->
+    		<div class="nav_kind1 clearFix">
+    			<ul class="clearFix1">
+					<?php foreach ($data[0] as $k => $v): ?>
+
+                    <li class="nav_li41">
+                        <a href="index.php?c=goods&a=index&id=<?=$v['id']?>"><?=$v['name']  ?></a>
+
+                        <div class="nav_tab1 nav_tab41 ">
+                                
+                            <div class="nav_tab_con1">
+                                <?php foreach ($data[1][$v['id']-1] as $key => $value): ?>
+                                <div class="nav_hot11 nav_hot1">
+                                    <a href="index.php?c=goods&a=detail&id=<?= $value['gid'] ?>">
+                                        <img src="<?= imgUrl($value['icon']) ?>">
+                                        <span class="nav_hot_name1"}"><?= $value['name'] ?></span>
+                                    </a>
+                                    <span class="nav_hot_price1"><?= $value['price'] ?></span>
+                                </div>
+								<?php endforeach ?>
+	    					</div>
+
+                        </div>
+                    </li>
+					<?php endforeach ?>
+
+    			</ul>
+    		</div>
+    	</div>
+		<!-- 第二行nav结束 -->
+	</div>
+
+    

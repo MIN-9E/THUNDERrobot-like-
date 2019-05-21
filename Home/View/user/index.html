@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/user.css">
+    <link rel="icon" href="<?= HL ?>image/favicon.ico">
+</head>
+<body>  
+
+  <?php $this->top() ?>
+
+  <div class="nav">
+    <div class="nav_bg">
+      <div class="nav_container">
+        <a href="">首页</a><span>></span><a href="">用户中心</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="order">
+    <div class="order_container clearFix">
+      <div class="order_leftBox">
+        <dt>订单中心</dt>
+        <dd><a href="index.php?c=orders">我的订单</a></dd>
+        <dd><a href="">退换货订单</a></dd>
+        <dd><a href="index.php?c=user&a=address">收货地址</a></dd>
+        <dd><a href="">缺货登记</a></dd>
+        <dd><a href="">以旧换新</a></dd>
+        <dt>会员中心</dt>
+        <dd><a href="index.php?c=user" style="color:#00eef3">我的个人中心</a></dd>
+        <dd><a href="">推荐有礼</a></dd>
+        <dd><a href="index.php?c=user&a=personal">用户信息</a></dd>
+        <dd><a href="">我的收藏</a></dd>
+        <dd><a href="">我的留言</a></dd>
+        <dd><a href="">我的评论</a></dd>
+        <dd><a href="">我的提问</a></dd>
+        <dd><a href="">我的众筹</a></dd>
+        <dd><a href="">企业用户</a></dd>
+        <dt>雷域商城</dt>
+        <dd><a href="">我的雷魂</a></dd>
+        <dd><a href="">我的晒单</a></dd>
+        <dd><a href="">与我相关</a></dd>
+        <dd><a href="">0元抽奖</a></dd>
+        <dt>账户中心</dt>
+        <dd><a href="">我的优惠券</a></dd>
+        <dd><a href="">跟踪包裹</a></dd>
+      </div>
+      <div class="user_firstpage">
+        <div class="user_topbox clearFix ">
+          <div class="user_toppic">
+
+            <?php if (empty($data['icon'])): ?>
+              
+            <img src="<?= HL ?>image/photo.jpg">
+            
+            <?php else: ?>
+              
+            <img src="<?= imgUrl($data['icon']) ?>">
+          
+            <?php endif ?>
+
+          </div>
+          <div class="user_topcenter">
+            <h1><?= $data['nickname'] ?></h1>
+            <a href="index.php?c=user&a=edit">修改个人资料</a>
+            <button>升级成为雷神老用户</button>
+            <a href="">成为雷神老用户有什么好处？</a>
+          </div>
+          <div class="user_topright">
+            <li>您的上一次登录时间：<?= date('Y-m-d H:i:s',$data['lasttime']) ?></li>
+            <li>雷神账号：Thunder_<?= $data['tel'] ?></li>
+            <li>您的等级是</li>
+            <button>升级为企业用户</button>
+            <img src="<?= HL ?>image/0010.gif">
+          </div>
+        </div>
+        <div class="user_middlepage clearFix">
+            <div class="user_middleContainer iconfont">
+              <img src="<?= HL ?>image/portal-icon-1.png">
+              <p>余额：<b> <?= $data['money'] ?>.00</b></p>
+              <a href="">查看您的账户余额 &#xe624;</a>
+            </div>
+            <div class="user_middleContainer iconfont">
+              <img src="<?= HL ?>image/portal-icon-2.png">
+              <p>优惠券：<b> 共计 1 个,价值 400.00</b></p>
+              <a href="">查看您的账户优惠券 &#xe624;</a>
+            </div>
+            <div class="user_middleContainer iconfont">
+              <img src="<?= HL ?>image/portal-icon-3.png">
+              <p>可用雷魂：<b> <?= $data['score'] ?>雷魂</b></p>
+              <a  href="">雷魂可用于0元抽奖</a>
+            </div>
+            <div class="user_middleContainer iconfont">
+              <img src="<?= HL ?>image/portal-icon-4.png">
+              <p>用户提醒：<b> 您最近30天内提交了1个订单</b></p>
+            </div>
+        </div>
+        <div class="user_selectReward">
+          0元抽奖
+        </div>
+        <div class="user_bottomPage clearFix ">
+          <div class="user_bottomBox">
+            <img src="<?= HL ?>image/589_thumb_G_1553484881571.jpg">
+            <a href="">雷神Dino-X5Ta</a>
+            <span>0元试用，不要雷魂不要钱，参与即有机会获得哦！请中奖用户自行联系客服</span>
+            <b>0雷魂 </b>&nbsp;
+            <del> 价值&yen;:6999.00</del>
+          </div>
+          <div class="user_bottomBox">
+            <img src="<?= HL ?>image/589_thumb_G_1553484881571.jpg">
+            <a href="">雷神Dino-X5Ta</a>
+            <span>0元试用，不要雷魂不要钱，参与即有机会获得哦！请中奖用户自行联系客服</span>
+            <b>0雷魂 </b>&nbsp;
+            <del> 价值&yen;:6999.00</del>
+          </div>
+          <div class="user_bottomBox">
+            <img src="<?= HL ?>image/589_thumb_G_1553484881571.jpg">
+            <a href="">雷神Dino-X5Ta</a>
+            <span>0元试用，不要雷魂不要钱，参与即有机会获得哦！请中奖用户自行联系客服</span>
+            <b>0雷魂 </b>&nbsp;
+            <del> 价值&yen;:6999.00</del>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <?php $this->footer() ?>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

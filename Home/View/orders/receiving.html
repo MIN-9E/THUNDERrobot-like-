@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心_订单管理_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/order.css">
+    <link rel="icon" href="<?= HL ?>image/favicon.ico">
+</head>
+<body>  
+
+<?php $this->top() ?>
+
+  <div class="nav">
+    <div class="nav_bg">
+      <div class="nav_container">
+        <a href="">首页</a><span>></span><a href="">用户中心</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="order">
+    <div class="order_container clearFix">
+      <div class="order_leftBox">
+        <dt>订单中心</dt>
+        <dd><a href="" style="color:#00eef3">我的订单</a></dd>
+        <dd><a href="">退换货订单</a></dd>
+        <dd><a href="index.php?c=user&a=address">收货地址</a></dd>
+        <dd><a href="">缺货登记</a></dd>
+        <dd><a href="">以旧换新</a></dd>
+        <dt>会员中心</dt>
+        <dd><a href="index.php?c=user">我的个人中心</a></dd>
+        <dd><a href="">推荐有礼</a></dd>
+        <dd><a href="index.php?c=user&a=personal">用户信息</a></dd>
+        <dd><a href="">我的收藏</a></dd>
+        <dd><a href="">我的留言</a></dd>
+        <dd><a href="">我的评论</a></dd>
+        <dd><a href="">我的提问</a></dd>
+        <dd><a href="">我的众筹</a></dd>
+        <dd><a href="">企业用户</a></dd>
+        <dt>雷域商城</dt>
+        <dd><a href="">我的雷魂</a></dd>
+        <dd><a href="">我的晒单</a></dd>
+        <dd><a href="">与我相关</a></dd>
+        <dd><a href="">0元抽奖</a></dd>
+        <dt>账户中心</dt>
+        <dd><a href="">我的优惠券</a></dd>
+        <dd><a href="">跟踪包裹</a></dd>
+      </div>
+      <div class="order_rightBox">
+        <div class="order_boxtop">
+          <p>我的订单</p>
+            <div class="order_state">
+              <a href="index.php?c=orders"  >待付款</a>
+              <span>|</span>
+              <a href="index.php?c=orders&a=receiving" style="color:#00eef3">待收货</a>
+
+              <span>|</span>
+              <a href="index.php?c=orders&a=evaluating">待评价</a>
+              <span>|</span>
+              <a href="index.php?c=orders&a=after">售后退款</a>
+            </div>    
+        </div>
+      </div>
+
+    <?php foreach ($data as $k => $v): ?>
+      
+
+      <div class="order_rightCenterBox">
+        <div class="order_titlebox clearFix">
+          <div class="titleContai">下单时间： <span><?= date('Y-m-d H:i:s',$v['time']) ?></span></div>
+          <div class="titleContai">订单号： <span><a href="./order_detail.html"> <?= $v['orderNum'] ?></a></span></div>
+          <input type="checkbox" name="order">
+        </div>
+        <?php foreach ($dataGoods[$x] as $key => $value): ?>
+          
+
+        <div class="order_mainCon clearFix">
+          <img src="<?= imgUrl($value['icon']) ?>">
+          <li>
+            <a href="index.php?c=goods&a=detail&id=<?= $value['gid'] ?>"><?= $value['name'] ?></a>
+            <p>• 赠品:购机送鼠标 | </p>
+            <span>• <?= $value['desc'] ?></span>
+          </li>
+          <li>
+            &yen; <?= $value['price'] ?>
+          </li>
+          <li>
+            x <?= $value['count'] ?>
+          </li>
+          <li>
+            &yen; <?= $value['count']*$value['price'] ?>
+          </li>
+        </div>
+
+        <?php endforeach ?>
+
+        <div class="order_mainbotc clearFix">
+          <div class="order_mainbotContlef"><span>商品总金额：</span>&yen; <?= $v['amount'] ?></div>
+          <div class="order_mainbotContlef"><span>优惠金额：</span>- &yen; 0.00</div>
+          <div class="order_mainbotContlef"><span>运费：</span>&yen; 0.00</div>
+          <div class="order_mainbotContrig"><span>订单金额：</span>&yen; <?= $v['amount'] ?></div>
+        </div>
+        <div class="order_botcont">
+          <div class="order_state">
+              <a href=""  ><?= $v['status']==1?'已发货':'未发货' ?></a>
+
+  
+          </div> 
+          <a href="index.php?c=orders&a=confirm&id=<?= $v['id'] ?>&status=<?= $v['status'] ?>"><button>确认收货</button></a>
+          <a href=""><button>查看物流</button></a>
+          
+          <?php if ($v['status']==2): ?>
+            
+          <a href="index.php?c=orders&a=del&oid=<?= $v['id'] ?>"><button>删除订单</button></a>
+          
+          <?php endif ?>
+
+        </div>
+
+      </div>
+    <?php $x++ ?>
+    <?php endforeach ?>
+
+    </div>
+  </div>
+
+<?php $this->footer() ?>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

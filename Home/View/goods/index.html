@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏笔记本_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/details.css">
+</head>
+<body>  
+
+	<?php $this->top() ?>
+	<div class="nav">
+		<div class="nav_bg">
+			<div class="nav_container">
+				<a href="">首页</a><span>></span><a href="">游戏笔记本</a>
+			</div>
+		</div>
+	</div>
+	<div class="filter">
+		<div class="filter_container ">
+			<div class="filter_type clearfix ">
+				<dt>CPU类型:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">I5-8300</a></dd>
+				<dd><a href="">HI5-8400</a></dd>
+				<dd><a href="">I7-7700HQ</a></dd>
+				<dd><a href="">I7-8750H</a></dd>
+				<dd><a href="">奔腾G5400</a></dd>
+			</div>
+			<div class="filter_type clearfix ">
+				<dt>独显型号:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">GTX1050</a></dd>
+				<dd><a href="">GTX1050Ti</a></dd>
+				<dd><a href="">GTX1060</a></dd>
+				<dd><a href="">GTX1070</a></dd>
+				<dd><a href="">RTX2060</a></dd>
+			</div>
+			<div class="filter_type clearfix ">
+				<dt>内存容量:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">16G</a></dd>
+				<dd><a href=""> 8G</a></dd>
+			</div>
+			<div class="filter_type clearfix ">
+				<dt>颜色:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">曜蓝</a></dd>
+				<dd><a href="">灰色</a></dd>
+				<dd><a href="">金属灰</a></dd>
+				<dd><a href="">银色</a></dd>
+				<dd><a href="">黑色</a></dd>
+				<dd><a href="">黑金</a></dd>
+			</div>
+			<div class="filter_type clearfix ">
+				<dt>硬盘容量:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">128GSSD+1T</a></dd>
+				<dd><a href="">1T</a></dd>
+				<dd><a href="">256GSSD+1T</a></dd>
+				<dd><a href="">256G固态+1T</a></dd>
+			</div>
+			<div class="filter_type clearfix ">
+				<dt>屏幕尺寸:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">15.6英寸1</a></dd>
+				<dd><a href="">7.3英寸</a></dd>
+				<!-- <dd>I7-7700HQ</dd> -->
+				<!-- <dd>I7-8750H</dd> -->
+				<!-- <dd>奔腾G5400</dd> -->
+			</div>
+			<div class="filter_type type_bottom clearfix ">
+				<dt>价格:</dt>
+				<dd class="num1">全部</dd>
+				<dd><a href="">5000 - 6000</a></dd>
+				<dd><a href="">6000 - 7000</a></dd>
+				<dd><a href="">7000 - 8000</a></dd>
+				<dd><a href="">8000 - 9000</a></dd>
+				<dd><a href="">9000 - 10000</a></dd>
+			</div>
+
+		</div>
+	</div>
+	<div class="main">
+		<div class="main_container">
+			<div class="main_top clearFix">
+				<div class="main_topLeft iconfont"><a href="">销量 &#xe613;</a></div><span>|</span>
+				<div class="main_topLeft"><a href="">价格</a></div><span>|</span>
+				<div class="main_topLeft"><a href="">上架时间</a></div>
+				<div class="main_topRight iconfont"><a href="">&#xe669;</a></div>
+				<div class="main_topRight iconfont"><a href="">&#xe664;</a></div>
+				<div class="main_topRight iconfont"><a href="">&#xe65c;</a></div>
+				<div class="main_topRight num2">显示方式：</div>
+			</div>
+			<div class="main_middle clearFix ">
+				<?php foreach ($goodsType as $key => $value): ?>
+						
+				<div class="goods_item">
+					<div class="goods_firstline clearFix">
+						<a href="">
+							<div class="goods_firstle iconfont ">
+								<b>&#xe60f;</b>
+								<span>收藏</span>
+							</div>
+						</a>
+						<a href="">
+							<div class="goods_firstri iconfont ">
+								<span>购买</span>
+								<b>&#xe622;</b>
+							</div>
+						</a>
+					</div>
+					<a href="index.php?c=goods&a=detail&id=<?= $value['gid'] ?>">
+						<div class="goods_picline">
+							<img src="<?= imgUrl($value['icon']) ?>">
+						</div>
+					</a>
+					<div class="goods_infoline">
+						<a href="index.php?c=goods&a=detail&id=<?= $value['gid'] ?>"><?= $value['name'] ?></a>
+						<p><?= $value['desc'] ?></p>
+						<span>官方价<?= $value['price'] ?></span>
+					</div>
+					<div class="goods_thum">
+						<img src="<?= imgUrl($value['icon']) ?>">
+					</div>
+				</div>
+
+				<?php endforeach ?>	
+
+
+
+			</div>
+			<div class="main_bottom clearFix">
+				<div class="main_bottlist num3"><a href="index.php?c=goods&id=<?= empty($_GET['id'])?null:$_GET['id'] ?>&page=<?= $this->goodsModel->page+1 ?>">下一页</a></div>
+
+					
+				<?php for ($l=$this->goodsModel->c; $l > 0; $l--): ?>
+				
+				<div class="main_bottlist num2"><a href="index.php?c=goods&id=<?= empty($_GET['id'])?null:$_GET['id'] ?>&page=<?= $l ?>"><?= $l ?></a></div>
+
+				<?php endfor ?>
+
+
+				<div class="main_bottlist num3"><a href="index.php?c=goods&id=<?= empty($_GET['id'])?null:$_GET['id'] ?>&page=<?= $this->goodsModel->page-1 ?>">上一页</a></div>
+				<div class="main_bottlist num3"><b><?= $this->goodsModel->c ?></b>页</div>
+				<div class="main_bottlist num1">总计<b><?= $this->goodsModel->d ?></b>个记录</div>
+			</div>
+			<div class="recom">
+				<div class="recom_container">
+					<div class="recom_top">
+						<div class="recom_title">
+							为你推荐
+						</div>
+					</div>
+					<div class="recom_middle">
+						<?php for ($j=0; $j < 5; $j++): ?>
+						<div class="recom_goods">
+							<div class="recom_picline">
+								<img src="<?= HL ?>image/info_3.jpg">
+							</div>
+							<div class="recom_infoline">
+								<a href="">雷神Air星战电竞版</a>
+								<p>7999</p>
+							</div>
+						</div>
+						<?php endfor ?>
+					</div>
+					<div class="recom_bottom">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <?php $this->footer() ?>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

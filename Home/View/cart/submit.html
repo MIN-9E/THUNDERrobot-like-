@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物流程_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+	<link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+	<link rel="stylesheet" href="<?= HL ?>css/submit.css">
+    <link rel="icon" href="<?= HL ?>image/favicon.ico">
+    <style>
+    	
+    </style>
+</head>
+<body>
+	<?php $this->top() ?>
+	<div class="color">
+	</div>
+	<div class="main">
+		<form action="index.php?c=orders&a=addOrders" method="post">
+		<div class="main_container">
+			<div class="main_tittle">
+				 确认订单信息页面
+			</div>
+
+			<?php if (empty($address)): ?>
+
+			<div class="main_resive clearFix ">
+				<div class="main_resInfo num4">收货人信息</div>
+				<a href=""><div class="main_resInfo num5"><?= $_SESSION['nickname'] ?></div></a>
+				<div class="main_resInfo num6"></div>
+				<div class="newadd1">
+				<div class="main_infoDetail1">
+					<a href="index.php?c=user&a=address">
+						<div class="newchange">
+							新增地址
+						</div>
+					</a>
+				</div>
+				</div>
+			</div>	
+				
+			<?php else: ?>
+				
+			<div class="main_resive clearFix ">
+				<div class="main_resInfo num4">收货人信息</div>
+				<a href=""><div class="main_resInfo num5"><?= $address[0]['n'] ?></div></a>
+				<div class="main_resInfo num6"></div>
+				<div class="newadd1">
+				<div class="main_infoDetail1">
+						<span>选择已有地址</span>
+						<select name="card" >
+								
+							<!-- <option value="none">请选择</option> -->
+							<?php foreach ($address as $k => $v): ?>
+							<option " value="<?= $v['id'] ?>" <?= $v['is_default']==1?'selected':null ?> ><?= $v['address'] ?>&nbsp;&nbsp;&nbsp;<?= $v['phone'] ?></option>
+
+							<?php endforeach ?>
+
+
+
+						</select>
+							<a href="index.php?c=user&a=address">
+								<div class="newchange">
+									新增地址
+								</div>
+							</a>
+				</div>
+
+				</div>
+				
+			</div>
+
+			<?php endif ?>
+			
+			<div class="main_pay">
+				<div class="main_payType clearFix">
+					<a href=""><div class="main_online num8">在线支付</div></a>
+					<a href=""><div class="main_online num9">在线支付</div></a>
+					<a href=""><div class="main_online num10">在线支付</div></a>
+					<a href=""><div class="main_online num11">在线支付</div></a>
+				</div>
+				<div class="main_pryDetail clearFix ">
+					<a href=""><div class="main_payway "><img src="<?= HL ?>image/alipay.png"></div></a>
+					<a href=""><div class="main_payway "><img src="<?= HL ?>image/wpay.png"></div></a>
+				</div>
+			</div>
+			<div class="main_deliver ">
+				<div class="main_dileverWay">
+					配送方式
+				</div>
+				<div class="main_deliverInfo">
+					<a href=""><div class="deliver_way">
+						顺丰速运
+					</div></a>
+					<p>注：新疆、青海、西藏不包邮，请联系客服确认快递信息，否则不予发货！</p>
+				</div>
+			</div>
+			<div class="main_goods clearFix ">
+				<div class="main_goodsTittle">
+					商品列表
+				</div>
+
+					
+
+				<div class="main_goodsInfo1 ">
+					<img src="<?= imgUrl($data['icon']) ?>"> 
+					<a href=""><?= $data['name'] ?> 赠品:晒图好评送M301电竞鼠标 |</a>
+				</div>
+				<div class="main_goodsInfo2">
+					&yen; <?= $data['price']*$_GET['count'] ?>
+					<input type="hidden" name="price" value="<?= $data['price'] ?>">
+						
+				</div>
+				<div class="main_goodsInfo3">
+					<?= $_GET['count'] ?>
+				<input type="hidden" name="count" value="<?= $_GET['count'] ?>">
+						
+				</div>
+				<div class="main_goodsInfo4">
+					&yen; <?= $data['price'] ?>
+						
+				</div>
+				<input type="hidden" name="gid" value="<?= $data['id'] ?>">
+				<div class="main_goodsInfo5">
+					<p></p>
+				</div>
+				
+				<div class="main_goodsInfo5">
+					<p>购物金额小计 10799.00</p>
+				</div>
+			</div>
+
+			<div class="main_otherInfo">
+				其他信息
+			</div>
+			<div class="main_info info1">
+				<div class="main_infoTitle">使用优惠券</div>
+				<div class="main_infoDetail1">
+						<span>选择已有优惠券</span>
+						<select >
+							<option value="none">请选择</option>
+							<option value="none">满300减300优惠券[300.00]</option>
+						</select>
+						<span>或者输入优惠券序列号</span>
+						<input type="text" name="">
+						<input type="submit" value="验证优惠券" class="identified">
+						
+				</div>
+			</div>
+			<div class="main_info info2">
+				<div class="main_infoTitle">使用推广码</div>
+				<div class="main_infoDetail1">
+						<span>输入推广码</span>
+						<input type="text" name="">
+						<input type="submit" value="验证推广码" class="identified">
+						
+				</div>
+			</div>
+			<div class="main_info info3">
+				<div class="main_infoTitle">开发票 </div>
+				<div class="main_infoDetail1">
+						
+						<span>发票抬头</span>
+						<input type="text" name="">
+						<span>发票内容</span>
+						<select name="" >
+							<option value="self">个人</option>
+							<option value="people">增值税</option>
+						</select>
+						
+				</div>
+			</div>
+			<div class="main_info info4">
+				<div class="main_infoTitle">订单附言</div>
+				<div class="main_infoDetail1">
+						<textarea name=""  cols="80" rows="3"></textarea>
+				</div>
+			</div>
+			<div class="main_shouldPay clearFix">
+				<div class="main_shouldContainer ">
+					<li><span>订购即送:</span><b>800 雷魂 ，以及价值 0.00的 优惠券。</b></li>
+					<li><span>商品总价：</span><b><?= $_GET['count']*$data['price'] ?></b></li>
+					<li><span>应付款金额：</span><b class="num12"><?= $_GET['count']*$data['price'] ?></b></li>
+				</div>
+			</div>
+			<div class="main_submit">
+				<div class="main_sub clearFix">
+					<input type="hidden" name="orderNum" value="<?= date('YmdHis',time())?>">
+					<input type="submit"  value="提交订单">
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+	<?php $this->footer() ?>
+</body>
+</html>
+
+
+
+
+
+
+

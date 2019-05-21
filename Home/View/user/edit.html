@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心_修改资料_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/edit.css">
+</head>
+<body>  
+
+  <?php $this->top() ?>
+
+  <div class="nav">
+    <div class="nav_bg">
+      <div class="nav_container">
+        <a href="">首页</a><span>></span><a href="">用户中心</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="order">
+    <div class="order_container clearFix">
+      <div class="order_leftBox">
+        <dt>订单中心</dt>
+        <dd><a href="index.php?c=orders">我的订单</a></dd>
+        <dd><a href="">退换货订单</a></dd>
+        <dd><a href="index.php?c=user&a=address">收货地址</a></dd>
+        <dd><a href="">缺货登记</a></dd>
+        <dd><a href="">以旧换新</a></dd>
+        <dt>会员中心</dt>
+        <dd><a href="index.php?c=user">我的个人中心</a></dd>
+        <dd><a href="">推荐有礼</a></dd>
+        <dd><a href="index.php?c=user&a=personal" style="color:#00eef3">用户信息</a></dd>
+        <dd><a href="">我的收藏</a></dd>
+        <dd><a href="">我的留言</a></dd>
+        <dd><a href="">我的评论</a></dd>
+        <dd><a href="">我的提问</a></dd>
+        <dd><a href="">我的众筹</a></dd>
+        <dd><a href="">企业用户</a></dd>
+        <dt>雷域商城</dt>
+        <dd><a href="">我的雷魂</a></dd>
+        <dd><a href="">我的晒单</a></dd>
+        <dd><a href="">与我相关</a></dd>
+        <dd><a href="">0元抽奖</a></dd>
+        <dt>账户中心</dt>
+        <dd><a href="">我的优惠券</a></dd>
+        <dd><a href="">跟踪包裹</a></dd>
+      </div>
+      <div class="personalPage">
+        <form action="index.php?c=user&a=editUser" method="post" enctype="multipart/form-data">
+        <div class="personal_tittle">
+          个人资料
+        </div>
+        <div class="personal_icon clearFix">
+
+          <?php if (empty($data['icon'])): ?>
+            
+          <div class="presonal_pic">
+            <div class="personal_piccontain">
+              <img src="<?= HL ?>image/photo.jpg" >
+            </div>
+          </div>
+
+          <?php else: ?>
+
+          <div class="presonal_pic">
+            <div class="personal_piccontain">
+              <img src="<?= imgUrl($data['icon']) ?>" >
+            </div>
+          </div>
+
+          <?php endif ?>
+          
+          <button>
+            上传头像
+            <div class="personal_iconChange ">
+              <input type="file" name="icon">
+            </div>
+          </button>
+        </div>
+        <div class="personal_data clearFix">
+          <div class="personal_bgimg"></div>
+          <div class="personal_list ">
+            <p>修改信息</p>
+            <span>用于修改个人基础资料信息</span>
+          </div>
+          <!-- <button>修改</button> -->
+          
+        </div>
+        <div class="personal_changeContainer ">
+              <div class="personal_change">
+                <span>昵称: </span>
+                <input type="text" name="nickname" value="<?= $data['nickname'] ?>">
+              </div>
+              <div class="personal_change">
+                 <span>生日: </span>
+                 <input type="date" name="birthday" value="<?= $data['birthday'] ?>">
+              </div>
+              <div class="personal_change1">
+                <span>性别: </span>
+                <input type="radio" name="sex" value="1" <?= $data['sex']==1?'checked':null; ?> >男
+                <input type="radio" name="sex" value="2" <?= $data['sex']==2?'checked':null; ?> >女
+              </div>
+              <div class="personal_change">
+                <span>密码: </span>
+                <input type="password" name="pwd">
+              </div>
+              <div class="personal_change">
+                <span>确认密码: </span>
+                <input type="password" name="repwd">
+              </div>
+              <div class="personal_change">
+                <span>手机号: </span>
+                <input type="text" name="tel" value="<?= $data['tel'] ?>" required autocomplete="off" maxlength="11">
+              </div>
+              <div class="personal_change">
+                <span>邮箱: </span>
+                <input type="email" name="email" value="<?= $data['email'] ?>" autocomplete="off">
+              </div>
+              <div class="personal_change">
+                <span>地址: </span>
+                <input type="text" name="address" value="<?= $data['address'] ?>" autocomplete="off">
+                <input type="hidden" name="regtime" value=<?= time() ?>>
+              </div>
+
+              <div class="personal_change2">
+                <input type="submit" value="确认修改">
+                <!-- <div>
+                <a href="index.php?c=user&a=personal"><button>返回</button></a></div>
+              </div> -->
+        </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+
+  <?php $this->footer() ?>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

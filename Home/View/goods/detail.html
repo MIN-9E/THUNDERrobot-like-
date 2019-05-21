@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>雷神911MT黑骑士_GTX1050Ti_游戏笔记本_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/goods_detail.css">
+</head>
+<body>  
+
+  <?php $this->top() ?>
+
+  <div class="nav">
+    <div class="nav_bg">
+      <div class="nav_container">
+        <a href="index.php">首页</a>
+        <span>></span>
+        <a href="index.php?c=goods&id=<?= $path['pid'] ?>"><?= $path['name']  ?></a>
+       <span>></span>
+        <a href=""><?= $path['nickname']  ?></a>
+
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="detail">
+    <div class="detail_container clearFix ">
+      <div class="detail_left clearFix ">
+        <div class="detail_leftFloat">
+
+          <?php foreach ($imgs as $k => $v): ?>
+            
+          <div class="detail_floatPic"><a href=""><img src="<?= imgUrl($v['icon']) ?>"></a></div>
+          
+          <?php endforeach ?>
+
+        </div>
+        <div class="detail_leftpic">
+          <img src="<?= imgUrl($imgs[0]['icon']) ?>">
+          <div class="detail_leftcoin iconfont">
+            <a href=""><img src="<?= HL ?>image/bofang.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="detail_right">
+          <div class="detail_rightTop">
+            <b><?= $goods['name'] ?></b>
+            <p><?= $goods['desc'] ?></p>
+            <del>官方价格： <?=$goods['oldprice']?></del>
+          </div>
+          <div class="detail_rightMiddle">
+            <div class="detail_rmprice">秒杀价</div>
+            <b>￥ <?= $goods['price'] ?></b>
+            <span>☀ 剩余时间： 1天 00时 00分 19秒</span>
+          </div>
+          <div class="detail_rightmidd iconfont ">
+            <div class="datail_phoneBuy">
+              <span> 去手机购买</span> &#xe651; &#xe615;
+              <div class="detail_phoneBox ">
+                <img src="<?= HL ?>image/qun2.png" class="detail_pic1" >
+              </div>
+            </div>
+            <li><span>商品库存 ： <span id="goodsStock"><?= $goods['stock'] ?></span></span></li>
+            <li>
+              <span>旧机换新 ：</span>
+              <a href="">可获最高800元红包补贴
+                <img src="<?= HL ?>image/old_02.jpg">
+              </a>
+            </li>
+            <li>
+              <span>此商品赠送 ：可获700 雷魂</span>
+              <img src="<?= HL ?>image/jiang.png">
+            </li>
+          </div>
+          <div class="detail_right_midbott">
+            <div class="deta_li">
+              <div class="det_righleft">配置选购：</div>
+              <div class="det_rightr">
+                <a href=""><div class="det_rrcontainer1"> I7/16G/128G+1T/GTX1060/6G/144Hz屏</div></a>
+              </div>
+            </div>
+            <div class="deta_li">
+              <div class="det_righleft">赠品：</div>
+              <div class="det_rightr"><a href=""><div class="det_rrcontainer2">购机送鼠标</div></a>
+             </div>
+           </div>
+            <div class="deta_li">
+              <div class="det_righleft">搭配套餐：</div>
+              <div class="det_rightr"><input type="checkbox" name="matchPackage">黑曜石电脑包原价299 [加 199.00]</div>
+            </div>
+            <div class="deta_li">
+              <div class="det_righleft">增值服务：</div>
+              <div class="det_rightr"><input type="checkbox" name="matchPackage">雷神游戏本意外险 [加 239.00]</div>
+            </div>
+          </div>
+          <div class="detail_right_bottop  ">
+            <div class="detail_number clearFix">
+              <div class="detail_numcontai det_num1">数量：</div>
+              <div class="detail_numcontai det_num2">
+
+
+
+
+                <button class="detail_block1" id="buttonDescrise" onclick="descrise()">-</button>
+                
+                <button class="detail_block2" id="buttonIncrease" onclick="increase()">+</button>
+        <form action="index.php" method="get">
+
+                <input class="detail_num" name="count" readonly id="goodsNumber" type="text" value="1">
+
+
+
+              </div>
+              <div class="detail_numcontai det_num4">件</div>
+              
+              <div class="detail_numcontai det_num3">
+                <input type="checkbox" name="compaire">对比
+              </div>
+            </div>
+            <div class="detail_payway">
+              <span>花呗分期:</span>
+            </div>
+          </div>
+          <div class="detail_right_botmid clearFix ">
+            <a href=""><div class="detail_section"><p>&yen;2666.33 X 3期</p><p>(手续费 &yen;61/期)</p></div></a>
+            <a href=""><div class="detail_section"><p>&yen;1333.17 X 6期</p><p>(手续费 &yen;60/期)</p></div></a>
+            <a href=""><div class="detail_section"><p>&yen;666.58 X 12期</p><p>(手续费 &yen;50/期)</p></div></a>
+          </div>
+          <div class="detail_right_botbot clearFix">
+           <input type="hidden" name="c" value="cart">
+           <input type="hidden" name="a" value="add">
+           <input type="hidden" name="id" value="<?=$goods['id']?>">
+
+          <?php if ($goods['stock']>0): ?>
+
+          <input type="submit" class="detail_joinCart iconfont" value="&#xe61f; 加入购物车">
+
+          <a href=""><div class="detail_like iconfont">
+              &#xe619; 喜欢
+            </div></a>
+          <?php else: ?>
+
+             <a href=""><div class="detail_like iconfont" style="margin-left: 80px;">
+              &#xe619; 喜欢
+            </div></a>
+            <a href=""><div class="detail_like iconfont">
+              &#xe65f; 预约
+            </div></a>
+
+          <?php endif ?>
+           
+
+          </div>
+        </form>
+        <div class="detail_right_botbottom clearFix iconfont">
+          <a href=""><div class="detail_rightbotbcontain">&#xe652; 销量  <?= $goods['sold'] ?></div></a><span>|</span>
+          <a href="#estimate"><div class="detail_rightbotbcontain">&#xe616; 评价 <?= $number ?></div></a><span>|</span>
+          <a href=""><div class="detail_rightbotbcontain">&#xe619; 满意度 98%</div></a>
+        </div>
+
+      </div>
+      <div class="detail_bottom ">
+        <div class="detail_bottomContainer clearFix  ">
+          <a href="#describe"><div class="det_botword">详情描述</div></a><span>|</span>
+          <a href="#parameter"><div class="det_botword">规格参数</div></a><span>|</span>
+          <a href="#estimate"><div class="det_botword">用户评价(<?= $number ?>)</div></a><span>|</span>
+          <a href="#guarantee"><div class="det_botword">购机保障</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="describe">
+    <div class="describe_container">
+      <div class="describe_main id="describe">
+        <div class="desc_img" >
+          <img src="<?= HL ?>image/152446555230581152446552769064911_01.jpg" >
+        </div>
+        <div class="desc_img">
+          <img src="<?= HL ?>image/152446555676602152446552730700911_07.jpg" >
+        </div>
+        <div class="desc_img">
+          <img src="<?= HL ?>image/152446555642215152446552727268911_06.jpg" >
+        </div>
+        <div class="desc_img">
+          <img src="<?= HL ?>image/152446555592254152446552769874911_05.jpg" >
+        </div>
+        <div class="desc_img">
+          <img src="<?= HL ?>image/152446555461415152446552630316911_03.jpg" >
+        </div>
+        <div class="desc_img">
+          <img src="<?= HL ?>image/152446555370785152446552640297911_02.jpg" >
+        </div>
+      </div>
+      <div class="describe_parameter" id="parameter">
+        <div class="des_paraTitle ">
+          <div class="des_paraLine">
+            <div class="des_paraWord">
+            规格参数
+            </div>
+          </div>
+        </div>
+        <div class="des_paraMain clearFix">
+          <div class="des_paraLeft">
+            <img src="<?= HL ?>image/646_thumb_G_1553485238776.jpg">
+          </div>
+          <div class="des_paraRight">
+            <table>
+              <tr><td>产品名称：雷神911黑幽灵电竞版</td><td>型号：雷神911黑幽灵电竞版</td><td>颜色：黑色</td></tr>
+              <tr><td>操作系统：Windows 10 家庭版</td><td>CPU类型：I7-8750H</td><td>CPU缓存：9M</td></tr>
+              <tr><td>核心：六核</td><td>内存容量：16G</td><td>内存类型：DDR4</td></tr>
+              <tr><td>插槽数量：2</td><td>最大支持内存：32G</td><td>硬盘容量：128GSSD+1T</td></tr>
+              <tr><td>独显型号：GTX1060</td><td>显存容量：6G</td><td>光驱类型：无</td></tr>
+              <tr><td>屏幕尺寸：15.6英寸</td><td>显示比例：16:9</td><td>物理分辨率：1920X1080</td></tr>
+              <tr><td>屏幕类型：雾面IPS高清屏</td><td>屏幕特征：144HZ电竞屏</td><td>内置蓝牙：有</td></tr>
+              <tr><td>局域网：内置10/100/1000M以太局域网</td><td>无线局域网：有</td><td>扬声器：有</td></tr>
+              <tr><td>键盘：孤岛式全尺寸RGB背光键盘</td><td>摄像头：有</td><td>读卡器：有</td></tr>
+              <tr><td>电池容量：内置锂离子电池</td><td>电源适配器：180W电源适配器</td><td>尺寸：386(W)×262(D)×25.1(H) mm</td></tr>
+              <tr><td>净重：约2.45Kg(含有电池，具体重量依据产品<br>出货配置为准)</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="describe_estimate" id="estimate">
+        <div class="des_paraTitle ">
+          <div class="des_paraLine">
+            <div class="des_paraWord">
+                用户评价
+            </div>
+          </div>
+        </div>
+        <div class="des_paraTotal clearFix">
+          <div class="des_paraTotalleft">
+            <p><b>98</b>%</p>
+            <span>购买后满意</span>
+          </div>
+          <div class="des_paraTotalrigh clearFix">
+            <div class="des_paraconcell">外观时尚(3)</div>
+            <div class="des_paraconcell">游戏畅爽(3)</div>
+            <div class="des_paraconcell">运行稳定(3)</div>
+            <div class="des_paraconcell">开机贼快(3)</div>
+            <div class="des_paraconcell">视效超棒(3)</div>
+            <div class="des_paraconcell">快递给力(3)</div>
+            <div class="des_paraconcell">客服nice(3)</div>
+            <div class="des_paraconcell">性价比高(3)</div>
+          </div>
+        </div>
+        <div class="des_helpfulEsit">
+          <span>
+            最有帮助的评价（<?= $number ?>）
+          </span>
+        </div>
+
+        <?php foreach ($comment as $k => $v): ?>
+          
+        <div class="des_esitimate clearFix">
+          <?php if (is_null($v['icon'])): ?>
+            <div class="estimate_toplef ">
+              <img src="<?= HL ?>image/photo.jpg">
+            </div>
+          <?php else: ?>
+            <div class="estimate_toplef ">
+              <img src="<?= imgUrl($v['icon']) ?>">
+            </div>
+          <?php endif ?>
+          
+
+          <div class="estimate_topcenter ">
+            <div class="esti_topcenter1">
+              <div class="esti_topcentercontai clearFix">
+                <?php foreach (explode(',',$v['tip']) as $keys => $values): ?>
+                
+                  <div class="esti_topcentercell"><?= $values ?></div>
+                  
+                <?php endforeach ?>
+  
+              </div>
+            </div>
+            <div class="esti_topcenter2">
+              <p><?= $v['comment'] ?></p>
+            </div>
+            <div class="esti_topcenter3">
+
+             
+                <?php foreach ($commentImg as $key => $value): ?>
+                  <?php if ($v['id']==$value['id']): ?>
+                    
+                    <a href="">
+                      <img src="<?= imgUrl($value['pic']) ?>">
+                    </a>
+                    
+                  <?php endif ?>
+                <?php endforeach ?>
+
+            </div>
+          </div>
+          <div class="estimate_topright iconfont">
+            <span>超爱 &#xe62a;</span>
+          </div>
+          <div class="estimate_bot clearFix ">
+            <div class="est_botleft">
+              <p><?= $v['nickname'] ?> <?= date('Y-m-d H-i-s',$v['time']) ?></p>
+            </div>
+            <div class="est_botright iconfont ">
+              <div class="est_botrightcell">
+                <a href="">&#xe619; 1</a>
+              </div>
+              <div class="est_botrightcell">
+                <a href="">&#xe60a; 0</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <?php endforeach ?>
+  
+      </div>
+
+      <div class="describe_guarantee" id="guarantee">
+        <div class="des_paraTitle ">
+          <div class="des_paraLine">
+            <div class="des_paraWord">
+            购机保障
+            </div>
+          </div>
+        </div>
+        <div class="guarantee_container">
+          <div class="guarantee_cell">
+            <img src="<?= HL ?>image/pc_201903201218001.jpg">
+          </div>
+ 
+        </div>        
+      </div>
+      <div class="another">
+        <div class="des_paraTitle ">
+          <div class="des_paraLine">
+            <div class="another_paraWord">
+            购买了该商品的用户还购买了
+            </div>
+          </div>
+        </div>
+        <div class="another_show clearFix">
+          <div class="another_cell">
+            <img src="<?= HL ?>image/487_thumb_G_1500852136549.jpg">
+            <div class="another_des">
+              <a href="">雷神M201幻彩RGB电竞游戏鼠标</a>
+            </div>
+            <p>129.0</p>
+          </div>
+          <div class="another_cell">
+            <img src="<?= HL ?>image/270_thumb_G_1463595175739.jpg">
+            <div class="another_des">
+              <a href="">雷神K30黑轴/青轴/茶轴机械键盘</a>
+            </div>
+            <p>199.0</p>
+          </div>
+          <div class="another_cell">
+            <img src="<?= HL ?>image/487_thumb_G_1500852136549.jpg">
+            <div class="another_des">
+              <a href="">雷神M201幻彩RGB电竞游戏鼠标</a>
+            </div>
+            <p>129.0</p>
+          </div>
+          <div class="another_cell">
+            <img src="<?= HL ?>image/270_thumb_G_1463595175739.jpg">
+            <div class="another_des">
+              <a href="">雷神K30黑轴/青轴/茶轴机械键盘</a>
+            </div>
+            <p>199.0</p>
+          </div>
+          <div class="another_cell">
+            <img src="<?= HL ?>image/487_thumb_G_1500852136549.jpg">
+            <div class="another_des">
+              <a href="">雷神M201幻彩RGB电竞游戏鼠标</a>
+            </div>
+            <p>129.0</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <?php $this->footer() ?>
+
+</body>
+</html>
+
+<script>
+  
+var input=document.getElementById('goodsNumber');
+var stock=document.getElementById('goodsStock');
+
+function descrise()
+{
+  // alert(input.value);
+  if (input.value<=1 ) {
+    input.value=1;
+  }else{
+    input.value--;
+  }
+}
+
+function increase()
+{
+  // alert(stock.innerHTML);
+  if (parseInt(input.value)<parseInt(stock.innerHTML)) {
+    input.value++;
+  }else{
+    input.value=stock.innerHTML;
+  }
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+

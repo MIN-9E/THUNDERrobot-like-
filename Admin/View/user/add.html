@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Required Stylesheets -->
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/reset.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/text.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/fonts/ptsans/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/fluid.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/mws.style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/icons/icons.css" media="screen" />
+
+<!-- Demo and Plugin Stylesheets -->
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/demo.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/colorpicker/colorpicker.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/jimgareaselect/css/imgareaselect-default.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/fullcalendar/fullcalendar.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/fullcalendar/fullcalendar.print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/tipsy/tipsy.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/sourcerer/Sourcerer-1.2.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/jgrowl/jquery.jgrowl.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>plugins/spinner/spinner.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/jui/jquery.ui.css" media="screen" />
+
+<!-- Theme Stylesheet -->
+<link rel="stylesheet" type="text/css" href="<?= AL ?>css/mws.theme.css" media="screen" />
+
+<!-- JavaScript Plugins -->
+
+<script type="text/javascript" src="<?= AL ?>js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="<?= AL ?>plugins/jimgareaselect/jquery.imgareaselect.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jquery.dualListBox-1.3.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jgrowl/jquery.jgrowl.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jquery.filestyle.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/fullcalendar/fullcalendar.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jquery.dataTables.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="<?= AL ?>plugins/flot/excanvas.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="<?= AL ?>plugins/flot/jquery.flot.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/flot/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/flot/jquery.flot.stack.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/flot/jquery.flot.resize.min.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/colorpicker/colorpicker.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/tipsy/jquery.tipsy.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/sourcerer/Sourcerer-1.2.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jquery.placeholder.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jquery.validate.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="<?= AL ?>plugins/spinner/ui.spinner.js"></script>
+<script type="text/javascript" src="<?= AL ?>js/jquery-ui.js"></script>
+
+<script type="text/javascript" src="<?= AL ?>js/mws.js"></script>
+<script type="text/javascript" src="<?= AL ?>js/demo.js"></script>
+<script type="text/javascript" src="<?= AL ?>js/themer.js"></script>
+<style>
+    .gradeX td{
+        text-align: center;
+    }
+    .mws-table th{
+        text-align: center;
+    }
+</style>
+
+<title>MWS Admin - Table</title>
+ 
+</head>
+
+<body>
+
+	<div id="mws-themer">
+    	<div id="mws-themer-hide"></div>
+        <div id="mws-themer-content">
+        	<div class="mws-themer-section">
+	        	<label for="mws-theme-presets">Presets</label> <select id="mws-theme-presets"></select>
+            </div>
+            <div class="mws-themer-separator"></div>
+            <div class="mws-themer-section">
+                <ul>
+                    <li><span>Base Color</span> <div id="mws-base-cp" class="mws-cp-trigger"></div></li>
+                    <li><span>Text Color</span> <div id="mws-text-cp" class="mws-cp-trigger"></div></li>
+                    <li><span>Text Glow Color</span> <div id="mws-textglow-cp" class="mws-cp-trigger"></div></li>
+                </ul>
+            </div>
+            <div class="mws-themer-separator"></div>
+            <div class="mws-themer-section">
+            	<ul>
+                    <li><span>Text Glow Opacity</span> <div id="mws-textglow-op"></div></li>
+                </ul>
+            </div>
+            <div class="mws-themer-separator"></div>
+            <div class="mws-themer-section">
+	            <button class="mws-button red small" id="mws-themer-getcss">Get CSS</button>
+            </div>
+        </div>
+        <div id="mws-themer-css-dialog">
+        	<div class="mws-form">
+            	<div class="mws-form-row" style="padding:0;">
+		        	<div class="mws-form-item">
+                    	<textarea cols="auto" rows="auto" readonly="readonly"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div id="mws-header" class="clearfix">
+    	<div id="mws-logo-container">
+        	<div id="mws-logo-wrap">
+            	<img src="<?= AL ?>images/mws-logo.png" alt="mws admin" />
+			</div>
+        </div>
+        
+        <div id="mws-user-tools" class="clearfix">
+        	<div id="mws-user-notif" class="mws-dropdown-menu">
+            	<a href="#" class="mws-i-24 i-alert-2 mws-dropdown-trigger">Notifications</a>
+                <span class="mws-dropdown-notif">35</span>
+                <div class="mws-dropdown-box">
+                	<div class="mws-dropdown-content">
+                        <ul class="mws-notifications">
+                        	<li class="read">
+                            	<a href="#">
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        	<li class="read">
+                            	<a href="#">
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        	<li class="unread">
+                            	<a href="#">
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        	<li class="unread">
+                            	<a href="#">
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="mws-dropdown-viewall">
+	                        <a href="#">View All Notifications</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mws-user-message" class="mws-dropdown-menu">
+            	<a href="#" class="mws-i-24 i-message mws-dropdown-trigger">Messages</a>
+                <span class="mws-dropdown-notif">35</span>
+                <div class="mws-dropdown-box">
+                	<div class="mws-dropdown-content">
+                        <ul class="mws-messages">
+                        	<li class="read">
+                            	<a href="#">
+                                    <span class="sender">John Doe</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        	<li class="read">
+                            	<a href="#">
+                                    <span class="sender">John Doe</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        	<li class="unread">
+                            	<a href="#">
+                                    <span class="sender">John Doe</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        	<li class="unread">
+                            	<a href="#">
+                                    <span class="sender">John Doe</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet
+                                    </span>
+                                    <span class="time">
+                                        January 21, 2012
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="mws-dropdown-viewall">
+	                        <a href="#">View All Messages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mws-user-info" class="mws-inset">
+            	<div id="mws-user-photo">
+                	<img src="<?= AL ?>example/profile.jpg" alt="User Photo" />
+                </div>
+                <div id="mws-user-functions">
+                    <div id="mws-username">
+                        Hello, John Doe
+                    </div>
+                    <ul>
+                    	<li><a href="#">Profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                        <li><a href="index.php?c=login&a=loginOut">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="mws-wrapper">
+		<div id="mws-sidebar-stitch"></div>
+		<div id="mws-sidebar-bg"></div>
+        <div id="mws-sidebar">
+        	<div id="mws-searchbox" class="mws-inset">
+            	<form action="">
+                	<input type="text" class="mws-search-input" />
+                    <input type="submit" class="mws-search-submit" />
+                </form>
+            </div>
+            <div id="mws-navigation">
+            	<ul>
+                	<li><a href="index.php" class="mws-i-24 i-home">Dashboard</a></li>
+             
+                	<li>
+                    	<a href="#" class="mws-i-24 i-list">用户</a>
+                        <ul>
+                            <li><a href="index.php?c=user&search=<?= $_GET['search'] ?>">用户列表</a></li>
+                            <li><a href="index.php?c=user&a=add">添加用户</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="mws-i-24 i-list">分类设置</a>
+                        <ul>
+                            <li><a href="index.php?c=category">分类列表</a></li>
+                            <li><a href="index.php?c=category&a=add">新增分类</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="mws-i-24 i-list">商品设置</a>
+                        <ul>
+                            <li><a href="index.php?c=goods&search=<?= isset($_GET['search'])?$_GET['search']:''; ?>">商品列表</a></li>
+                            <li><a href="index.php?c=goods&a=add">新增商品</a></li>
+
+                        </ul>
+                    </li>
+                   <li>
+                        <a href="#" class="mws-i-24 i-list">订单管理</a>
+                        <ul>
+                            <li><a href="index.php?c=orders">待处理订单</a></li>
+                            <li><a href="index.php?c=orders&a=process">已处理订单</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+        
+        <div id="mws-container" class="clearfix">
+            <div class="container">
+
+                <div class="mws-panel grid_4">
+                    <div class="mws-panel-header">
+                        <span class="mws-i-24 i-pencil">添加用户</span>
+                    </div>
+                    <div class="mws-panel-body">
+                        <form class="mws-form" action="index.php?c=user&a=doAdd" method="post" enctype="multipart/form-data">
+                            <div class="mws-form-inline">
+                                <div class="mws-form-row">
+                                    <label>昵称</label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="nickname" placeholder="请输入昵称" class="mws-textinput" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>电话</label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" maxlength="11" name="tel" class="mws-textinput" placeholder="请输入手机号" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>密码</label>
+                                    <div class="mws-form-item large">
+                                        <input type="password" name="pwd" class="mws-textinput" placeholder="请输入6-18位的密码 不含空格" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>确认密码</label>
+                                    <div class="mws-form-item large">
+                                        <input type="password" name="repwd" placeholder="请输入6-18位的密码 不含空格" class="mws-textinput" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>邮箱</label>
+                                    <div class="mws-form-item large">
+                                        <input type="email" name="email" class="mws-textinput" placeholder="5@567"/>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>性别</label>
+                                    <div class="mws-form-item small">
+                                        <select name="sex">
+                                            <option value="1">男</option>
+                                            <option value="2">女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>生日</label>
+                                    <div class="mws-form-item large"> 
+                                        <input type="date" name="birthday" class="mws-textinput"  />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>头像</label>
+                                    <div class="mws-form-item large">
+                                        <input type="file" name="icon"  class="mws-textinput"  />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>地址</label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="address" placeholder="请输入地址" class="mws-textinput" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>状态</label>
+                                    <div class="mws-form-item small">
+                                        <select name="status">
+                                            <option value="1">激活</option>
+                                            <option value="2">禁用</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mws-button-row">
+                                    <input type="submit" value="添加" style="width:400px;margin-right: 88px;" class="mws-button black" />
+                                </div>
+
+
+
+                                
+
+
+                            </div>
+                        </form>
+                    </div>      
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

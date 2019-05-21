@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	<title>Document</title>
+	<link rel="stylesheet" href="<?= HC ?>common.css">
+	<link rel="stylesheet" href="<?= HC ?>index.css">
+</head>
+<body>
+	<?php $this->header() ?>
+	<?php $this->logo_cart() ?>
+
+	<div id='main'>
+		<div class='main_banner'>
+			<a href=""><img src="<?= HI ?>a.png" alt="" width=''></a>
+		</div>
+
+		<div class='main_recommend'>
+			<ul>
+				<?php foreach ($data as $k => $v): ?>
+					<li>
+						<div class='item_wrap'>
+							<div class='item'>
+								<div class='item_img'>
+									<a href=""><img src="<?= imgUrl($v['icon']) ?>" alt="" width=240px></a>
+								</div>
+								<div class='item_text'>
+									<p class='p1'><a href=""><?= $v['name']?></a></p>
+									<p class='p2'><?= $v['desc']?></p>
+									<p class='p3'>
+										<span class='s1'>￥<?= $v['price']?></span>
+										<span class='s2'>已售 <?= $v['sold'] ?> 件</span>
+									</p>
+								</div>
+								<a href="" class='add_cart'>加入购物车</a>
+							</div>
+						</div>
+					</li>
+				<?php endforeach ?>
+			</ul>
+		</div>
+	</div>
+	
+	<?php $this->footer() ?>
+
+	
+</body>
+</html>

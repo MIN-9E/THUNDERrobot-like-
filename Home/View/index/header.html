@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心_订单管理_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?=HL?>/iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?=HL?>css/order_after.css">
+</head>
+<body>   
+
+  <div class="top1" id="head">
+      <div class="top-container1 clearFix">
+        <div class="topbar_nav1">  
+          <div class="topbar_link1"><a href="">雷神官网</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">雷神校园</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">雷神国际站</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">神游电竞</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">雨田基金</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">旧机换新</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">银行分期购</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">商城移动版</a></div><span>|</span>
+          <div class="topbar_link1"><a href="">雷神租赁</a></div>
+        </div>
+
+
+            <div class="head_container_right1 ">
+                <div class="shopCart1 iconfont">
+                    <a href="index.php?c=cart"> &#xe622; 购物车(<?= empty($_SESSION['cart'])?0:count($_SESSION['cart']); ?>)</a>
+                    <?php if (empty($_SESSION['cart'])): ?>
+                        
+                        <div class="shop_box1">
+                            购物车中还没有商品，赶紧选购吧！
+                        </div>  <!-- head行右幅 -->
+     
+
+                    <?php else: ?>
+
+                        <div class="shop_box1">
+                            <div class="top_001" style="height: 50px;">
+                                <div class="012" style="float:left;line-height:50px;padding-left:30px;"><?= $result['name'] ?> </div>
+                                <div class="012" style="float:right;line-height:50px;padding-right:30px;">&yen;<?= $result['price'] ?> X <?= $result['count'] ?></div>
+                              </div>
+                              <div class="top_002" style="height: 50px; ;">
+                                <div class="top_021" style="width: 150px;height: 50px;float: left;">
+                                  <div class="top022" style="padding-left:30px;height:10px;line-height:10px;color:#00eef3;text-align:left">共计<?=count($_SESSION['cart'])?>件商品</div>
+                                  <div class="top022" style="padding-left:30px;color:#00eef3;height:40px;line-height:40px;font-size:22px;text-align:left;">
+                                    <span style="font-size:14px;color:#00eef3;">合计:</span>
+                                    <?=$result['count']*$result['price']?>
+                                  </div>
+                                </div>
+                                <div class="top_022" style="width: 150px;height: 50px;float: right;">
+                                  <a href="" style="color:white"><div class="top_023" style="width: 130px;height: 40px;border: 1px solid #e0e0e0;background: #00bcbf;line-height:40px;">去购物车结算</div></a>
+                                </div>
+                              </div>   
+                        </div>  
+
+                    <?php endif ?>
+                        
+                </div>  
+                
+    <?php if (empty($_SESSION['nickname'])): ?>
+
+                <div class="login1">
+                    <ul>
+                        <li><a href="">签到赢好礼</a></li>
+                        <li><span>|</span><a href="./login.html">登录</a></li>
+                        <li><span>|</span><a href="./register.html">注册</a></li>
+                    </ul>
+                </div>
+
+    <?php else: ?>
+
+        <div class="top_rightcon1 position1 iconfont">
+          <a href="./personal.html">点白 &nbsp;&#xe615;</a>
+          <div class="top_rightList1 ">
+            <div class="top_listcon1"><a href="./user.html">个人中心</a></div>
+            <div class="top_listcon1"><a href="">我的收藏</a></div>
+            <div class="top_listcon1"><a href="">我的评论</a></div>
+            <div class="top_listcon1"><a href="">跟踪包裹</a></div>
+            <div class="top_listcon1"><a href="">退出登录</a></div>
+          </div>
+        </div>
+
+    <?php endif ?>
+
+
+
+        </div>
+  <div class="header">
+      <div class="header_container">
+        <div class="header_firstline clearFix">
+          <div class="header_img1">
+            <a href="index.php"><img src="<?=HL?>image/logo_new.jpg"></a>
+          </div>
+          <div class="header_img2">
+            <img src="<?=HL?>image/1550167041967117957.gif">
+          </div>
+          <div class="head_search clearFix">
+            <div class="head_search1 ">
+              <form action="">
+                <input type="text" placeholder="&nbsp; 911Air &nbsp; Dino &nbsp; 黑幽灵">
+              </form>
+            </div>
+            <div class="head_button1 ">
+              <button class="iconfont">&#xe620;</button>
+            </div>
+          </div>
+        </div> <!-- 首页图片及搜索框结束 -->
+        <div class="header_secondline clearFix">
+          <div class="head_list1 iconfont clearFix">
+            <span>全部分类</span><b>&#xe615;</b>
+            <div class="head_main_list">
+              <div class="head_main clearFix iconfont">
+                <span>游戏笔记本</span><b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">爆款推荐</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">高跑分系列</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">办公游戏本</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right2.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>游戏台式机</span>
+                <b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1050Ti</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1060</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1070Ti</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">电竞显示器</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right3.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right4.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>游戏键鼠/耳机</span><b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">爆款推荐</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">高跑分系列</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">办公游戏本</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>电竞箱包</span><b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1050Ti</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1060</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1070Ti</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">电竞显示器</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right3.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right4.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>20显卡专区</span><b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">爆款推荐</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">高跑分系列</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">办公游戏本</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>私人订制专区</span><b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1050Ti</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1060</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">GTX1070Ti</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">电竞显示器</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right3.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right4.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>GTX1060专区</span><b>&#xe626;</b>
+              </div>
+              <div class="head_main iconfont">
+                <span>积分商城</span><b>&#xe626;</b>
+                <div class="home_slider_infobox clearFix">
+                      <div class="info_left clearFix">
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">爆款推荐</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_3.jpg" class="info_3">
+                          <span class="info_4">雷神911MT黑骑士</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">高跑分系列</span>
+                          <span class="info_2">&#xe624;</span>
+                          </a>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="homeinfo_head">
+                          <span class="info_1">办公游戏本</span>
+                          <span class="info_2">&#xe624;</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                        <a href="" class="home_cell">
+                          <img src="<?=HL?>image/info_4.jpg" class="info_3">
+                          <span class="info_4">雷神911Air星彩版</span>
+                        </a>
+                      </div>
+                      <div class="info_right clearFix">
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                        <a href="" class="home_cell_right">
+                          <img src="<?=HL?>image/home_right1.jpg">
+                        </a>
+                      </div>
+                </div>
+              </div>
+              <div class="head_main iconfont">
+                <span>免费试用</span><b>&#xe626;</b>
+              </div>
+            </div>
+          </div>
+
+          <?php foreach ($data[0] as $k => $v): ?>
+ 
+          <a href="index.php?c=goods&a=index&id=<?= $v['id'] ?>">
+            <div class="head_list2">
+              <span><?=$v['name']  ?></span>
+              <div class="nav_tab nav_tab4 ">
+                <div class="nav_tab_con">
+                  <div class="nav_hot1 nav_hot">
+                    <a href="">
+                      <img src="<?=HL?>image/hotshop3.jpg">
+                      <span class="nav_hot_name"}">雷神沙漠风暴H71主动降噪电竞耳</span>
+                    </a>
+                    <span class="nav_hot_price">399</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </a>    <!-- 首页商品列表开始 -->
+          <?php endforeach ?>
+          
+        </div>
+      </div>
+  </div>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

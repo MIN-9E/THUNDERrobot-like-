@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心_收货地址_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/address.css">
+    <link rel="icon" href="<?= HL ?>image/favicon.ico">
+</head>
+<body>  
+
+
+<?php $this->top() ?>
+
+
+  <div class="nav">
+    <div class="nav_bg">
+      <div class="nav_container">
+        <a href="">首页</a><span>></span><a href="">用户中心</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="order">
+    <div class="order_container clearFix">
+      <div class="order_leftBox">
+        <dt>订单中心</dt>
+        <dd><a href="index.php?c=orders">我的订单</a></dd>
+        <dd><a href="">退换货订单</a></dd>
+        <dd><a href=""  style="color:#00eef3">收货地址</a></dd>
+        <dd><a href="">缺货登记</a></dd>
+        <dd><a href="">以旧换新</a></dd>
+        <dt>会员中心</dt>
+        <dd><a href="index.php?c=user">我的个人中心</a></dd>
+        <dd><a href="">推荐有礼</a></dd>
+        <dd><a href="index.php?c=user&a=personal">用户信息</a></dd>
+        <dd><a href="">我的收藏</a></dd>
+        <dd><a href="">我的留言</a></dd>
+        <dd><a href="">我的评论</a></dd>
+        <dd><a href="">我的提问</a></dd>
+        <dd><a href="">我的众筹</a></dd>
+        <dd><a href="">企业用户</a></dd>
+        <dt>雷域商城</dt>
+        <dd><a href="">我的雷魂</a></dd>
+        <dd><a href="">我的晒单</a></dd>
+        <dd><a href="">与我相关</a></dd>
+        <dd><a href="">0元抽奖</a></dd>
+        <dt>账户中心</dt>
+        <dd><a href="">我的优惠券</a></dd>
+        <dd><a href="">跟踪包裹</a></dd>
+      </div>
+      <div class="address">
+        <div class="address_container">
+          <div class="address_tittle">
+            收货人信息
+          </div>
+            
+          <?php foreach ($data as $k => $v): ?>
+          <form action="index.php?c=user&a=updateAddress&id=<?= $v['id'] ?>" method="post">
+            
+          <div class="address_tableHad">
+            <table>
+
+              <tr>
+                <td>收货人姓名：</td>
+                <td>
+                  <input type="text" name="receiver" value="<?= $v['receiver'] ?>"> (必填)
+                </td>
+                <td>电子邮件地址：</td>
+                <td>
+                  <input type="text" value="">
+                </td>
+              </tr>
+              <tr>
+                <td>详细地址：</td>
+                <td>
+                  <input type="text" name="address" value="<?= $v['address'] ?>"> (必填)
+                </td>
+                <td>邮政编码：</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>手机：</td>
+                <td>
+                  <input type="text" name="phone" maxlength="11" value="<?= $v['phone'] ?>"> (必填)
+                </td>
+                <td>电话：</td>
+                <td>
+                  <input type="text"  > 
+                </td>
+              </tr>
+              <tr>
+                <td>标志建筑：</td>
+                <td>
+                  <input type="text">
+                </td>
+                <td>最佳送货时间：</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <?php if ($v['is_default']==1): ?>
+                    <默认地址>
+                  <?php else: ?>
+                    <a href="index.php?c=user&a=change&id=<?= $v['id'] ?>">(设为默认地址) </a>
+                  <?php endif ?>
+                </td>
+                <td colspan="3">
+                  <input type="submit" class="address_sbmit1" value="确认修改">
+                  <a href="index.php?c=user&a=del&id=<?= $v['id'] ?>">
+                    <div>删除</div>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          </form>
+
+          <?php endforeach ?>
+          
+          <form action="index.php?c=user&a=addAddress" method="post">
+            <div class="address_tableHad">
+              <table>
+
+                </tr>
+                <tr>
+                  <td>收货人姓名：</td>
+                  <td>
+                    <input type="text" name="receiver"> (必填)
+                  </td>
+                  <td>电子邮件地址：</td>
+                  <td>
+                    <input type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>详细地址：</td>
+                  <td>
+                    <input type="text" name="address"> (必填)
+                  </td>
+                  <td>邮政编码：</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>手机：</td>  (必填)
+                  <td>
+                    <input type="text" maxlength="11" name="phone">
+                  </td>
+                  <td>电话：</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>标志建筑：</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                  <td>最佳送货时间：</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="3">
+                    <input type="submit" class="address_sbmit1" value="新增收货地址">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+<?php $this->footer() ?>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车满_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+	<link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+	<link rel="stylesheet" href="<?= HL ?>css/cartfull.css">
+    <link rel="icon" href="<?= HL ?>image/favicon.ico">
+</head>
+<body>
+
+ 	<?php $this->top() ?>
+	<div class="color">
+	</div>
+	<?php if (empty($_SESSION['cart'])): ?>
+	<div class="cart2">
+		<div class="cart_container2">
+			<div class="cart_tittle2 ">
+				<a href="">首页 > 系统提示</a>
+			</div>
+			<div class="cart_main2">
+				<div class="cart_mainTittle2">
+					系统信息
+				</div>
+				<div class="cart_maincont2">
+					<div class="cart_info12">
+						您的购物车中没有商品！
+					</div>
+					<div class="cart_info22">
+						<a href=" <?= $_SERVER['HTTP_REFERER'] ?> ">返回上一页</a>
+					</div>
+	 			</div>
+			</div>
+		</div>
+	</div>
+	
+	<?php else: ?>
+	
+	<div class="cart">
+		<div class="cart_container">
+			<div class="cart_tittle ">
+				<a href="index.php">首页</a> > 系统提示
+			</div>
+	
+		<?php foreach ($_SESSION['cart'] as $k => $v): ?>
+			<div class="cart_goods clearFix">
+				<div class="cart_goodsleft clearFIx ">
+					<div class="cart_goodspic">
+						<img src="<?= HL ?>image/hot_shop6.jpg">
+					</div>
+					<div class="cart_goodsinfo">
+						<a href="index.php?c=goods&a=detail&id=<?= $v['id'] ?>"><?= $v['name'] ?></a>
+						<p><?= $v['desc'] ?></p>
+						
+					</div>
+				</div>
+				<div class="cart_goodsright clearFix ">
+					<!-- <form action="index.php?c=orders" method="post">
+						选中<input type="checkbox" name="choced" value="<?= $v['id'] ?>">
+					</form> -->
+					<div class="cart_total  num22 ">&yen; <?= $v['price']*$v['count'] ?>.00</div>
+					<div class="cart_number num22  iconfont">
+						<a href="index.php?c=cart&a=dec&id=<?= $v['id'] ?>">
+							<div class="cart_numbut1">&#xe606; </div>
+						</a>
+						<input type="text" class="cart_cartnum" readonly name="count" value="<?= $v['count'] ?>">
+						<a href="index.php?c=cart&a=inc&id=<?= $v['id'] ?>">
+							<div class="cart_numbut2">&#xe605;</div>
+						</a>
+					</div>
+					<div class="cart_price  num22 "><?=  $v['price']  ?></div>
+					<div class="cart_delete ">
+						<a href="index.php?c=cart&a=del&id=<?= $v['id'] ?>">
+							<button>删除</button>
+						</a>
+					</div>
+					<div class="cart_dubmit ">
+						<a href="index.php?c=cart&a=cart&count=<?=$v['count'] ?>&id=<?=$v['id']?>"><button>购买</button></a>
+					</div>
+				</div>
+			</div>
+		<?php endforeach ?>
+		   	<div class="fix">
+		   		<div class="fix_container clearFix">
+		   			<div class="fix_left clearFix">
+		   				<!-- <form action="">
+		   					<input type="checkbox" name="all">
+		   				</form> -->
+		   				<span><a href="">全选</a></span>
+		   				<span><a href="">删除</a></span>
+		   				<span><a href="">收藏</a></span>
+		   				<span><a href="">分享</a></span>
+
+		   			</div>
+		   			<div class="fix_right clearFIx ">
+		   				<a href="index.php?c=cart&a=cartAll">
+		   					<div class="fix_right1">
+		   					结算
+		   					</div>
+		   				</a>
+		   				<div class="fix_right2">
+		   					<span>合计（不含运费）：</span>
+		   					<b>￥<?= $sum ?></b> 
+		   				</div>
+		   				<div class="fix_right3">
+		   					已选商品<span><?= count($_SESSION['cart']) ?></span>件
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</div> 
+		</div>
+	</div>
+
+			<?php endif ?>
+ 	<?php $this->footer() ?>
+</body>
+</html>

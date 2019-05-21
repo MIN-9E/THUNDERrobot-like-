@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	<title>Document</title>
+	<link rel="stylesheet" href="<?= HC ?>common.css">
+	<link rel="stylesheet" href="<?= HC ?>index.css">
+</head>
+<body>
+
+	<?php $this->header() ?>
+	<?php $this->logo_cart() ?>
+
+
+	<div id='main'>
+		<div class="detail_main">
+			<!-- 商品详情   左侧图片列 -->
+			<div class="main_left" id="main_left_id">
+				<div class="imgs">
+					<!-- 商品大图片 -->
+					<div class="imgs-wrap">
+						<img id="bigImg" src="<?= imgUrl($imgs[0]['icon']) ?>" width='360px'>
+					</div>
+
+
+					<!-- 商品小图片 -->
+					<ul class="sm_img">
+						<?php foreach ($imgs as $k => $v): ?>
+							<li><img src="<?= imgUrl($v['icon']) ?>" width='68px'></li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+			</div>
+
+
+			<!-- 商品详情   右侧数据列 -->
+			<div class="main_right">
+				<div class='main_right_con'>
+					<p class='goods_name'><?= $goods['name']  ?></p>
+					<div class='goods_desc' ><?= $goods['desc']  ?></div>
+					<div class="goods_price">
+						<div class="price_sale">
+							<span class="price_sale_txt"></span>
+							<strong class="price_sale_txt1">￥ <?= $goods['price']  ?></strong>
+						</div>
+						<div class="yishou">已售 <?= $goods['sold']  ?> 件</div>
+					</div>
+					<form action="goods.php" method="get">
+						<dl class="goods_num">
+							<dt>数量&nbsp;&nbsp;:&nbsp;</dt>
+							<dd class="count_w">
+								<!-- 减按钮 -->
+								<em title="减少数量" id="count_add" value='jian' class="br" onclick="jian()">-</em>
+
+								<!-- 购买数量 -->
+								<input type="text" name="count" id='mynum' value='1' > 
+
+								<!-- 加按钮 -->
+								<em	title="增加数量" id="count_sub" value='jia' class="bl" onclick="jia()">+</em>
+
+
+
+							</dd>
+							<div class="store">&nbsp;件 ( 库存 <span id="stock"><?= $goods['stock']  ?></span> 件 )</div>
+						</dl>
+						<div class="sub-order">
+							<input type="hidden" name="bz" value="cart">
+							<input type="hidden" name="gid" value="">
+							<input type="hidden" name="store" value="">
+							<input type='submit' value='加入购物车' class='add_cart'>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php $this->footer() ?>
+
+</body>
+</html>
+
+
+
+
+
+<script>
+	// Js 严格区分大小写
+	// Js 严格区分大小写
+	// Js 严格区分大小写
+
+
+	// 1. 通过 onclick  html属性触发 点击事件
+	// 		<div    onclick=" 函数名()  " >
+
+	// 2. 弹窗
+	// 	 alert(内容)
+
+
+	// 3. 获取表单对象 		(普及:  js 是OOP开发)
+		var input = document.getElementById('mynum');
+
+
+	// 4. 获取标签对象
+		var stock = document.getElementById('stock');
+
+
+
+	function jian()
+	{
+		// alert(' 您刚刚点击的 减按钮 ');
+
+		// 1) 查询 input表单的value值
+		// 	格式:  对象.属性名 			(普及: 在js中, 所有获取的数据默认都是 字符串类型)
+		// 	alert( input.value )
+
+		if(  input.value <= 1  ){
+			input.value = 1;
+		}else{
+			input.value--;
+		}
+	}
+
+
+	function jia()
+	{
+		// alert(' 您刚刚点击的 加按钮 ');
+		// 
+		// 1) 查询 标签的正文内容
+		// 	格式: 
+		// 		标签对象.innerHTML
+		// 		alert( stock.innerHTML );
+		// 		
+		// 	
+		// 2) 类型转换 
+		// 	js中强制转为 int的函数:  parseInt()
+
+		if( parseInt(input.value) >= parseInt(stock.innerHTML) ) {
+			input.value = stock.innerHTML;
+		}else{
+			input.value ++;
+		}	
+
+	}
+
+
+
+
+
+
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册_雷神官网—雷神,雷神笔记本电脑,雷神游戏本,台式机,鼠标键盘官方正品商城！</title>
+    <link rel="stylesheet" href="<?= HL ?>iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?= HL ?>css/register.css">
+</head>
+<body>
+	<div class="login">
+		<div class="login_container ">
+			<div class="login_toplogo">
+				<a href="index.php"><img src="<?= HL ?>image/logo_xin.png"></a>
+			</div>
+			<div class="register_page">
+				<div class="register_tittle">
+					注册雷神官网帐号
+				</div>
+				<div class="register_frame ">
+					<form action="index.php?c=login&a=doRegist" method="post">
+					<input type="text" name="nickname" required placeholder="用户昵称">
+					<input type="email" name="email" placeholder="Email">
+					<input type="password" name="pwd" placeholder="密码">
+					<input type="password" name="repwd" placeholder="确认密码">
+					<input type="text" name="tel" required maxlength="11" placeholder="手机号">
+					<input type="text" name="code" placeholder="请输入短信验证码">
+					<button><input type="submit" name="send" value="获取验证码" style="height:40px;width:111px;background: red;">
+					</button>
+					<input type="checkbox" name="checkBox" checked><span>我已看过并接受 <a href=""> 《用户协议》</a></span>
+					<input type="submit" value="同意协议并注册">
+
+					<input type="hidden" name="regtime" value="<?= time() ?>">
+					</form>
+					<div class="loginplace clearFix">
+						<a href="index.php?c=login">登录</a><span>已有账号？</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info_botto_left">
+            <p><a href="">以旧换新服务</a> |
+            <a href="">信用卡分期购</a> |
+            <a href="">企业订购</a> |
+            <a href="">驱动下载</a> |
+            <a href="">神游网</a> |
+            <a href="">雷神增值服务</a> |
+            <a href="">老用户福利</a> |
+            <a href="">问题反馈</a></p>
+            <span>© 2014-2020 www.leishen.cn 青岛雷神科技股份有限公司 版权所有 全国免费咨询电话：4006-999-999 鲁ICP备14015908号-1
+            </span>
+        </div>
+	</div>
+</body>
+</html>

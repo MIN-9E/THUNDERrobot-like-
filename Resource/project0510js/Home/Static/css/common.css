@@ -1,0 +1,40 @@
+/**{margin:0;padding:0;list-style:none;text-decoration:none;color:white;font-family:Microsoft Yahei;}*/
+
+html,body,div,span,h1,h2,h3,h4,h5,p,em,img,dl,dt,dd,ol,ul,li,table,tr,th,td,form,select,textarea{margin:0;padding:0;border:0;}
+html{font:14px/1.5 '微软雅黑', arial, tahoma, simsun;color:#666;/* background:#f4f2f0; *//*background:#fff;*/ overflow-x: hidden;}
+ul,ol,li{list-style:none; text-align:left;}
+img{vertical-align:top;border:0 none;}
+input,label{vertical-align:middle;}
+table{border-collapse:collapse;border-spacing:0;}
+a{outline-style:none;text-decoration:none;color:#8c8c8c;}
+a:hover{color:#19a2be;}
+body{
+	overflow-x: hidden;
+}
+.clear{clear:both;}
+.left{float:left;}
+.right{float:right;}
+
+::-webkit-scrollbar{
+	width:10px;
+	background:#F2F2F2;
+}
+
+::-webkit-scrollbar-thumb{
+	background:#19a2be;
+	border-radius:5px;
+}
+
+::-webkit-scrollbar-track{
+	background-color:#eee;
+}
+
+::selection{
+	color:white;
+	background:#19a2be;
+}
+
+::-moz-selection{
+	color:white;
+	background:#19a2be;
+}

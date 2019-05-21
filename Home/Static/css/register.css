@@ -1,0 +1,175 @@
+
+	/*初始化*/
+body,ul,ol,li,h1,h2,h3,h4,h5,h6,button{margin:0;padding:0;}
+body{font:14px 'Microsoft Yahei';min-width:1583px;max-width:100%;}
+li{list-style:none;}
+a{text-decoration:none;} 
+a:link{color:#999999;}
+
+a:visited{color:#999999;}  						  
+a:hover,a:active,a:focus{color:#00eef3;}
+    
+    /*共用属性*/
+   .bd{border:1px dashed red;}
+   .bg{background:#00eef3;}
+   .clearFix::before,.clearFix::after{content:' ';display:block;}
+   .clearFix::after{clear:both;}
+   .floatL{
+    		float:left;
+    	}
+   .va{vertical-align:middle;}
+    /*共用属性*/
+
+
+.login{
+  width: 100%;
+  /*height: 780px;*/
+  background: #f5f5f5;
+}
+.login_container{
+  width: 1226px;
+  margin: 0 auto;
+  padding: 40px 0 20px 0;
+}
+.login_toplogo{
+  width: 1226px;
+  height: 120px;
+  /*margin:30px 0 20px;*/
+  text-align: center;
+}
+
+.register_page{
+  width: 960px;
+  /*height: 600px;*/
+  background: #fff;  
+  margin: 0 auto;
+  padding:30px;
+  border-radius: 20px;
+}
+
+.register_tittle{
+  width: 960px;
+  height: 66px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #e6e6e6;
+}
+.register_frame{
+  width: 332px;
+  height: 500px;
+  margin: 0 auto;
+  padding:20px 0;
+}
+
+.register_frame input{
+  width: 330px;
+  height: 24px;
+  padding:10px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  border:1px solid #e6e6e6;
+}
+.register_frame input:nth-of-type(6){
+  width: 213px;
+}
+.register_frame button{
+  width: 90px;
+  height: 40px;
+  text-align: center;
+  /*background: #ff0000;*/
+  /*color: #fff;*/
+  border: 0;
+}
+/*.register_frame input:nth-of-type(5){
+  button:none;
+}*/
+.register_frame input:nth-of-type(7){
+  width: 13px;
+  height: 13px;
+  margin: 4px;
+}
+.register_frame input:nth-of-type(7)+span{
+  font-size: 12px;
+  
+}
+.register_frame input:nth-of-type(7)+span a{
+  color: #0000ff;
+  font-size: 12px;
+}
+.register_frame input:nth-of-type(8){
+  width: 330px;
+  height: 42px;
+  background: #00eef3;
+  margin :20px auto;
+  font-size: 15px;
+}
+.loginplace{
+  width: 322px;
+  height: 25px;
+  padding:5px;
+}
+.register_frame .loginplace a{
+  float: right;
+  font-size: 12px;
+  color: #00eef3;
+}
+.register_frame .loginplace span{
+  float: right;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info_botto_left{
+  width: 700px;
+  height: 38px;
+  padding:20px 0px;
+  margin: 0 auto;
+
+}
+.info_botto_left p{
+  font-size:13px;
+  line-height:13px;
+  margin:0px;
+  text-align: center;
+}
+.info_botto_left span{
+  font-size:12px;
+  line-height:25px;
+  color:#999999;
+  text-align: center;
+  
+}
+
+
+
+
+
+
+
+
+
+
