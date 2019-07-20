@@ -35,7 +35,7 @@ const HL='/Home/Static/';
 // 定义数据库参数为常量
 const DSN = 'mysql:host=localhost;dbname=project;charset=utf8';
 const USER = 'root';
-const PWD = '';
+const PWD = '123456';
 
 require_once '../Public/function.php';
 
